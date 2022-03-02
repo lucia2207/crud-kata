@@ -7,11 +7,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class TodoService {
-
     @Autowired
     private TodoRepository repository;
 
-    public Iterable<TodoModel> list(){
+    public Iterable <TodoModel> list(){
         return repository.findAll();
     }
 
@@ -23,7 +22,7 @@ public class TodoService {
         repository.delete(get(id));
     }
 
-    public TodoModel get(Long id) {
+    public TodoModel get(Long id){
         return repository.findById(id).orElseThrow();
     }
 }
